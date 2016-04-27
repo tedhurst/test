@@ -24,3 +24,4 @@ class HomePageTest(TestCase):
 ##
 ##    def test_bad_maths(self):
 ##        self.assertEqual(1+1, 3)
+##TESTS
