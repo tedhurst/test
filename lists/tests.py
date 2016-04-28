@@ -9,7 +9,7 @@ class ItemModelTest(TestCase):
 
     def test_saving_and_retrieving_items(self):
         first_item = Item()
-        first_item.next = 'The first (ever) list item'
+        first_item.text = 'The first (ever) list item'
         first_item.save()
 
         second_item = Item()
@@ -48,6 +48,10 @@ class HomePageTest(TestCase):
         #exercise
         response = home_page(request)
         #assert
+        #self.assertEqual(Item.objects.count(), 1)
+        #new_item = Item.objects.first()
+        #self.assertEqual(new_item.text, 'A new list item')
+        
         self.assertIn('A new list item', response.content.decode())
         expected_html = render_to_string(
             'home.html',
